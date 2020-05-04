@@ -4,3 +4,8 @@ All the files listed above will allow you to replicate the results of this exper
 # Data of Project
 - The data used for the calculations is under Salaries.csv
 # Packages Required
+library(rvest)
+library(readr)
+library(DT)
+library(tidyverse)
+library(stargazer)

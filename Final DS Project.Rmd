@@ -1,0 +1,16 @@
+---
+title: 'Logit Model For Strength Coach Salary and Wins in Division 1 College Football  '
+author: "Joe Castiglione"
+date: "4/29/2020"
+output:
+  beamer_presentation:
+    theme: "AnnArbor"
+    colortheme: "dolphin"
+    fonttheme: "structurebold"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+

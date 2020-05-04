@@ -1,0 +1,379 @@
+\documentclass[12pt,english]{article}
+\usepackage{mathptmx}
+
+\usepackage{color}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{darkblue}{RGB}{0.,0.,139.}
+
+\usepackage[top=1in, bottom=1in, left=1in, right=1in]{geometry}
+
+\usepackage{amsmath}
+\usepackage{amstext}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage{lipsum}
+
+\usepackage[authoryear]{natbib}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage[flushleft]{threeparttable}
+\usepackage{graphicx}
+\usepackage[english]{babel}
+\usepackage{pdflscape}
+\usepackage{csvsimple}
+\usepackage{booktabs} % For \toprule, \midrule and \bottomrule
+\usepackage{siunitx} % Formats the units and values
+\usepackage{pgfplotstable} % Generates table from .csv
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=true,pdfborder={0 0 0},backref=false,
+ colorlinks,citecolor=black,filecolor=black,
+ linkcolor=black,urlcolor=black]
+ {hyperref}
+\usepackage[all]{hypcap} % Links point to top of image, builds on hyperref
+\usepackage{breakurl}    % Allows urls to wrap, including hyperref
+
+\linespread{2}
+
+\begin{document}
+
+\begin{singlespace}
+\title{Relationship Between Division 1 Head Strength Coach Salary and On-field Performance\thanks{}}
+\end{singlespace}
+
+\author{Joseph Castiglione\thanks{Department of Health & Exercise Science, University of Oklahoma.\
+E-mail~address:~\href{mailto:joe.castiglione.jr@ou.edu}{joe.castiglione.jr@ou.edu}}}
+
+% \date{\today}
+\date{April, 2020}
+
+\maketitle
+\begin{abstract}
+\begin{singlespace}
+The project set out to find a relationship between Division 1 head strength coaches and the on field performance of the football programs. 
+\end{singlespace}
+
+\end{abstract}
+\vfill{}
+
+
+\pagebreak{}
+
+
+\section{Introduction}\label{sec:intro}
+    In a time we see the threat to college football as COVID 19 stricken the nation, we see the true importance it has not only on Universities but on communities. A continued discussion of how to make this upcoming season happen is at the forefront of the sports news. Each University looks for an area to increase the chance of success of their football team. One of the ways teams look to not only improve their players but their chances is the department of strength and conditioning. The goal of this study is to provide clear numbers for administrators in which they can use to decide the allocations towards strength and conditioning departments. Using the Strength Coach salaries paired with data from the season, I hope to find and visualize a relationship between the two. The difference between the top paid coach versus the smallest salary is substantial. Iowa's Head Strength and Conditioning Coach is paid 800,000 dollars per year, almost 16 times more than Ohio's strength coach who is paid 54,000 dollars a year \cite{gardner}. The need for this study and experiment is apparent due to lack of similar studies. This makes it interesting to research because there is not any information on how to go about it or the formulas necessary. While correlation does not always equal causation, I would like to see if there is one when it comes to these two seemingly independent variables. 
+     
+
+\section{Literature Review}\label{sec:litreview}
+During the review of the research of this topic there is one glaring issue, an extreme lack of information on the subject. There has not been a study to look into a connection between wins & losses and other on field performance statistics in relation with the salaries of the head strength & conditioning coach. After reviewing I saw that there was some research missing. Research such as recent surveys over the landscape of college football strength and conditioning along with more analysis of the responsibility of the coaches. Year after year they are adding staff in addition to increasing technology's role in their daily activities.  This only furthered my opinion that there is a need for this experiment. Some minor roles of head strength and conditioning coaches may vary from school to school but their main responsibility stays the same, to get the student athlete in the best shape to be able to perform on the field. One way these coaches have direct responsibility on game days is the pre-game warm ups. Each coach is tasked with taking them through drills and stretches in order to get the athletes ready to compete at a high level. 
+
+One factor that plays into the role of success of student athletes on the field is the relationship they build with the coach and how the coach's style helps the player. In a study over Rugby players, which participate in a sport with very similar demands compared to football it was found "Coach–athlete relationships are built over time, with prolonged engagement being advantageous for positive relations. Success in a coach–athlete relationship was possible where they work together toward one goal i.e., a “shared purpose”, with athletes in the present study highly valuing the mutual goal setting process" \cite{article}. This study not only took into consideration the role direct supervision of a good coach but the likeability in the goal of increasing strength of athletes. The group who was supervised over the 12 week period had significantly more weight added to the max strength of the bench press and squat lifts compared to those who were not supervised. It is of note that both groups in the study completed the same strength program during the 12 week period. 
+
+One thing that will be assumed during this is the fact that the strength coach plays a role in getting the student athlete ready to compete. The tenure of each strength coach tends to be longer than position coaches and head coach. According to a 2004 study that was sent out to strength coaches the average time the respondent held their position of head strength and conditioning coach was 8.1 years with an average of 6.1 years at their current school \cite{article} This is important information to have due to the fact a strength coach must have its footing in a university to have an effect. 
+
+
+\section{Data}\label{sec:data}
+Two points of data came from web scrapping using some of the skills I learned throughout this class. I used the knowledge learned around problem set 5. I scraped the salaries of all Division 1 strength coaches from USA today.  The salaries of the coaches is from the 2019 regular season and will be compared with statistics from the 2019-2020 season. Some of the salaries of schools were missing. This was due to the fact that at private Universities are not released to the public. Schools that were not included in the experiment were Air Force University, The college football win and losses were collected from collegefootballdata.com.
+
+The independent variable for this study is the salaries of the head strength and conditioning coaches at each school. This is because each year the salary of the schools changes before the season starts. There are additional bonus given to strength coaches based on the results of the season but the majority of the pay is set far before the first snap of the season. 
+
+
+
+
+\section{Empirical Methods}\label{sec:methods}
+For the testing of my project I chose to make a regression model. The regression model I used was Ordinary Least Squares, which minimizes error by squaring it. Total wins were predicted based off the X1 being total pay of head strength coaches added to the average. Using a linear model in R I was able to compile a OLS model. 
+\begin{equation}
+\label{eq:1}
+Y_ Total Wins = \alpha+ X_{1}{Total.Pay}
+\end{equation}
+
+
+
+
+\section{Research Findings}\label{sec:results}
+The main results are reported in Table 1 & 2, which are listed below. Table 1 is a condensed version which includes summaries of the overall experiment.
+
+Ways I would improve this experiment are immense. First off I would look to include multiple seasons of data and run the statistics. One thing this can help build trends and would be able to throw out outliers. While the salaries of the coaches are set before the season, a couple years of high success can really increase salaries of the coaches. After running the OLS model I was able to find a positive R2. The R2 was .595 which shows that there is a positive relation between higher amount of salaries and wins for Division 1 college football teams. 
+
+
+\section{Conclusion}\label{sec:conclusion}
+While there were some ups and downs of this project, there were some takeaways. One was while during the literature review process there was not a ton of similar studies published. It would have been helpful to have other studies to base off of or get ideas to increase the validity and effectiveness of the results. If given more time I would broaden the horizons and stem into different seasons and combine them to get a better overall results instead of only looking at one season. After reviewing the summary of the findings I am able to say that there is a correlation between increased salaries and increased wins. While correlation does not always equal causation it is a great indication that further experimentation would be worthwhile. 
+
+\vfill
+\pagebreak{}
+\begin{spacing}{1.0}
+\bibliographystyle{jpe}
+\bibliography{References.bib}
+\addcontentsline{toc}{section}{References}
+\end{spacing}
+
+\vfill
+\pagebreak{}
+\clearpage
+
+%========================================
+% FIGURES AND TABLES 
+%========================================
+\section*{Figures and Tables}\label{sec:figTables}
+\addcontentsline{toc}{section}{Figures and Tables}
+%----------------------------------------
+% Figure 1
+%----------------------------------------
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{Salaries & Wins} 
+\begin{tabular}{@{\extracolsep{1pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & total.wins \\ 
+
+\hline \\[-1.8ex] 
+Observations & 116 \\ 
+R$^{2}$ & 0.595 \\ 
+Adjusted R$^{2}$ & 0.010 \\ 
+Residual Std. Error & 3.015 (df = 47) \\ 
+F Statistic & 1.017 (df = 68; 47) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table}
+
+%----------------------------------------
+% Table 2
+%----------------------------------------
+\begin{table}[!htbp] \centering 
+  \caption{} 
+  \label{} 
+\begin{tabular}{@{\extracolsep{5pt}}lc} 
+\\[-1.8ex]\hline 
+\hline \\[-1.8ex] 
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\ 
+\cline{2-2} 
+\\[-1.8ex] & total.wins \\ 
+\hline \\[-1.8ex] 
+ 100,000 & $-$0.964 \\ 
+  & (1.645) \\ 
+  & \\ 
+ 101,000 & $-$1.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 103,262 & 2.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 105,000 & $-$0.714 \\ 
+  & (2.231) \\ 
+  & \\ 
+ 105,495 & $-$4.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 110,000 & $-$1.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 111,000 & $-$0.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 120,000 & $-$0.714 \\ 
+  & (1.861) \\ 
+  & \\ 
+ 129,800 & 3.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 130,000 & $-$1.214 \\ 
+  & (2.231) \\ 
+  & \\ 
+ 131,508 & 1.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 135,000 & $-$1.214 \\ 
+  & (2.231) \\ 
+  & \\ 
+ 137,917 & $-$2.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 140,000 & $-$1.214 \\ 
+  & (2.231) \\ 
+  & \\ 
+ 150,000 & $-$0.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 158,018 & 5.286$^{*}$ \\ 
+  & (3.086) \\ 
+  & \\ 
+ 159,000 & 2.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 175,000 & $-$2.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 196,261 & $-$2.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 199,416 & 3.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 200,004 & $-$1.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 205,000 & $-$3.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 219,450 & $-$4.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 225,000 & $-$1.214 \\ 
+  & (2.231) \\ 
+  & \\ 
+ 227,000 & $-$1.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 235,000 & $-$2.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 240,000 & 4.786$^{**}$ \\ 
+  & (2.231) \\ 
+  & \\ 
+ 250,000 & $-$0.381 \\ 
+  & (1.861) \\ 
+  & \\ 
+ 251,500 & $-$0.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 254,684 & 1.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 255,000 & 1.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 265,500 & 0.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 270,000 & $-$0.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 280,000 & 2.619 \\ 
+  & (1.861) \\ 
+  & \\ 
+ 285,540 & 0.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 290,000 & $-$4.714$^{**}$ \\ 
+  & (2.231) \\ 
+  & \\ 
+ 300,000 & 0.286 \\ 
+  & (2.231) \\ 
+  & \\ 
+ 310,000 & $-$0.048 \\ 
+  & (1.861) \\ 
+  & \\ 
+ 324,700 & $-$2.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 325,000 & 0.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 350,000 & 3.786$^{*}$ \\ 
+  & (2.231) \\ 
+  & \\ 
+ 366,400 & $-$1.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 375,000 & 2.286 \\ 
+  & (1.861) \\ 
+  & \\ 
+ 380,000 & 5.286$^{*}$ \\ 
+  & (3.086) \\ 
+  & \\ 
+ 390,000 & $-$0.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 400,000 & 0.619 \\ 
+  & (1.861) \\ 
+  & \\ 
+ 425,000 & $-$2.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 436,687 & 1.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 450,000 & 5.286$^{*}$ \\ 
+  & (3.086) \\ 
+  & \\ 
+ 500,000 & 1.786 \\ 
+  & (2.231) \\ 
+  & \\ 
+ 54,500 & 0.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 583,000 & 1.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 595,000 & 4.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 610,000 & 7.286$^{**}$ \\ 
+  & (3.086) \\ 
+  & \\ 
+ 625,000 & 1.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 735,000 & 6.286$^{**}$ \\ 
+  & (3.086) \\ 
+  & \\ 
+ 78,000 & $-$1.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 80,770 & 0.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 800,200 & 3.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 84,000 & $-$1.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 84,150 & $-$0.714 \\ 
+  & (2.231) \\ 
+  & \\ 
+ 85,000 & 1.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 87,550 & $-$5.714$^{*}$ \\ 
+  & (3.086) \\ 
+  & \\ 
+ 91,500 & $-$4.714 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 91,599 & 0.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 92,000 & 0.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ 95,000 & $-$2.714 \\ 
+  & (2.231) \\ 
+  & \\ 
+ 96,900 & 1.286 \\ 
+  & (3.086) \\ 
+  & \\ 
+ Constant & 6.714$^{***}$ \\ 
+  & (0.658) \\ 
+  & \\ 
+\hline \\[-1.8ex] 
+Observations & 116 \\ 
+R$^{2}$ & 0.595 \\ 
+Adjusted R$^{2}$ & 0.010 \\ 
+Residual Std. Error & 3.015 (df = 47) \\ 
+F Statistic & 1.017 (df = 68; 47) \\ 
+\hline 
+\hline \\[-1.8ex] 
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
+\end{tabular} 
+\end{table} 
+
+
+
+\bibliography{Bibliography.bib}
+\end{document}
